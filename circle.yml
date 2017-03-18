@@ -1,0 +1,21 @@
+machine:
+  node:
+    version: 5.5.0
+  services:
+    - redis
+  environment:
+    REDIS_HOST: localhost
+    REDIS_PORT: 6379
+    DATABASE_URL: postgres://ubuntu:@127.0.0.1:5432/circle_test
+    NODE_ENV: test
+
+database:
+  post:
+    - psql -c "CREATE EXTENSION postgis;" -d circle_test
+
+test:
+  override:
+    - npm install -g knex
+    - knex migrate:latest
+    - npm test
+    - if [[ -e test-results.xml ]]; then cp test-results.xml $CIRCLE_TEST_REPORTS/test-results.xml; fi

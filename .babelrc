@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "stage-0"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "lib": "./lib",
+        "db": "./db",
+        "config": "./config",
+        "middleware": "./src/middleware",
+        "models": "./src/models",
+        "modules": "./src/modules",
+      }
+    }]
+  ]
+}

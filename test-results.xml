@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.9990000000000001" tests="14" failures="0">
+  <testsuite name="Root Suite" timestamp="2016-12-26T19:09:42" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Auth" timestamp="2016-12-26T19:09:42" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="POST /auth" timestamp="2016-12-26T19:09:42" tests="2" failures="0" time="0.117">
+    <testcase name="Auth POST /auth should throw 401 if credentials are incorrect" time="0.019" classname="should throw 401 if credentials are incorrect">
+    </testcase>
+    <testcase name="Auth POST /auth should auth user" time="0.098" classname="should auth user">
+    </testcase>
+  </testsuite>
+  <testsuite name="Users" timestamp="2016-12-26T19:09:43" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="POST /users" timestamp="2016-12-26T19:09:43" tests="2" failures="0" time="0.12">
+    <testcase name="Users POST /users should reject signup when data is incomplete" time="0.014" classname="should reject signup when data is incomplete">
+    </testcase>
+    <testcase name="Users POST /users should sign up" time="0.106" classname="should sign up">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET /users" timestamp="2016-12-26T19:09:43" tests="1" failures="0" time="0.006">
+    <testcase name="Users GET /users should not fetch all users" time="0.006" classname="should not fetch all users">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET /users/:id" timestamp="2016-12-26T19:09:43" tests="3" failures="0" time="0.028999999999999998">
+    <testcase name="Users GET /users/:id should not fetch user if token is invalid" time="0.008" classname="should not fetch user if token is invalid">
+    </testcase>
+    <testcase name="Users GET /users/:id should throw 404 if user doesn&apos;t exist" time="0.011" classname="should throw 404 if user doesn&apos;t exist">
+    </testcase>
+    <testcase name="Users GET /users/:id should fetch user" time="0.01" classname="should fetch user">
+    </testcase>
+  </testsuite>
+  <testsuite name="PUT /users/:id" timestamp="2016-12-26T19:09:43" tests="3" failures="0" time="0.033">
+    <testcase name="Users PUT /users/:id should not update user if token is invalid" time="0.008" classname="should not update user if token is invalid">
+    </testcase>
+    <testcase name="Users PUT /users/:id should throw 404 if user doesn&apos;t exist" time="0.012" classname="should throw 404 if user doesn&apos;t exist">
+    </testcase>
+    <testcase name="Users PUT /users/:id should update user" time="0.013" classname="should update user">
+    </testcase>
+  </testsuite>
+  <testsuite name="DELETE /users/:id" timestamp="2016-12-26T19:09:43" tests="3" failures="0" time="0.6940000000000001">
+    <testcase name="Users DELETE /users/:id should not delete user if token is invalid" time="0.005" classname="should not delete user if token is invalid">
+    </testcase>
+    <testcase name="Users DELETE /users/:id should throw 404 if user doesn&apos;t exist" time="0.009" classname="should throw 404 if user doesn&apos;t exist">
+    </testcase>
+    <testcase name="Users DELETE /users/:id should delete user" time="0.68" classname="should delete user">
+    </testcase>
+  </testsuite>
+</testsuites>

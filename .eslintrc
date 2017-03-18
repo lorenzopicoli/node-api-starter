@@ -1,0 +1,12 @@
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "semi" : [2, "never"],
+    "space-before-function-paren": ["error", "never"]
+  }
+}
