@@ -25,17 +25,17 @@ passport.use('local', new LocalStrategy({
     const user = await User.where({ email }).fetch()
 
     if (!user) {
-      return done(null, false)
+      return done(false)
     }
 
     try {
       const match = await user.validatePassword(password)
 
       if (!match) {
-        return done(null, false)
+        return done(false)
       }
 
-      done(null, user)
+      done(user)
     } catch (err) {
       done(err)
     }
@@ -45,7 +45,8 @@ passport.use('local', new LocalStrategy({
 }))
 
 passport.use('facebook-token', new FacebookTokenStrategy(config.facebook, async (accessToken, refreshToken, profile, done) => {
-  if (!accessToken || !profile.id){
+  console.log(accessToken, profile.id)
+  if (!accessToken || !profile.id) {
     return done('something', null)
   }
   return done(null, {'profile': profile, 'facebook_token': accessToken})

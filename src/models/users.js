@@ -52,8 +52,6 @@ export const User = Bookshelf.Model.extend({
 
       user.set('password', hash)
     }
-
-    return
   },
 
   async saveFBAvatar(fbUrl) {

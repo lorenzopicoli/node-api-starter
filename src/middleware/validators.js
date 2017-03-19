@@ -3,12 +3,8 @@ import config from 'config'
 
 // Sets body = { me } where me is the jwt payload
 export async function isAuthenticated(ctx, next) {
-  let authorization = ctx.headers.authorization
-
-  if (!authorization || authorization.indexOf('Bearer') !== -1) {
-    authorization = ctx.headers.localauthorization
-  }
-
+  const authorization = ctx.headers.authorization
+  
   if (!authorization) {
     ctx.throw(401)
   }

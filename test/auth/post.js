@@ -4,16 +4,14 @@ import { User } from 'models/users'
 
 module.exports = (request, context) => {
   describe('POST /auth', () => {
-    beforeEach(async done => {
+    beforeEach(async () => {
       context.user = await User.forge(user()).save()
       context.admin = await User.forge(admin()).save()
-      done()
     })
 
-    afterEach(async done => {
+    afterEach(async () => {
       await context.user.destroy()
       await context.admin.destroy()
-      done()
     })
 
     it('should throw 401 if credentials are incorrect', (done) => {

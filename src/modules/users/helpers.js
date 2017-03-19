@@ -7,7 +7,6 @@ export const createUserHelper = async (ctx, userInfo) => {
     await user.save()
     await user.refresh()
   } catch (err) {
-    console.log('a', err)
     ctx.throw(422, err.detail)
   }
 

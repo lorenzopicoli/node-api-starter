@@ -4,17 +4,15 @@ import { user, admin } from '../utils'
 
 module.exports = (request, context) => {
   describe('GET /users', () => {
-    beforeEach(async done => {
+    beforeEach(async () => {
       context.user = await User.forge(user()).save()
       context.admin = await User.forge(admin()).save()
-      done()
     })
 
-    afterEach(async done => {
+    afterEach(async () => {
       // The ideal would be to call await context.user.destroy(), but it causes an error (Bookshelf bug?)
       await User.where({ id: context.user.get('id') }).destroy()
       await User.where({ id: context.admin.get('id') }).destroy()
-      done()
     })
 
     it('should not fetch all users if not admin', (done) => {
@@ -38,17 +36,15 @@ module.exports = (request, context) => {
   })
 
   describe('GET /users/:id', () => {
-    beforeEach(async done => {
+    beforeEach(async () => {
       context.user = await User.forge(user()).save()
       context.admin = await User.forge(admin()).save()
-      done()
     })
 
-    afterEach(async done => {
+    afterEach(async () => {
       // The ideal would be to call await context.user.destroy(), but it causes an error (Bookshelf bug?)
       await User.where({ id: context.user.get('id') }).destroy()
       await User.where({ id: context.admin.get('id') }).destroy()
-      done()
     })
 
     it('should not fetch user if token is invalid', (done) => {

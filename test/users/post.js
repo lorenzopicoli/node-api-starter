@@ -4,17 +4,15 @@ import { User } from 'models/users'
 import { user, admin } from '../utils'
 
 module.exports = (request, context) => describe('POST /users', () => {
-  beforeEach(async done => {
+  beforeEach(async () => {
     context.user = await User.forge(user()).save()
     context.admin = await User.forge(admin()).save()
-    done()
   })
 
-  afterEach(async done => {
+  afterEach(async () => {
     // The ideal would be to call await context.user.destroy(), but it causes an error (Bookshelf bug?)
     await User.where({ id: context.user.get('id') }).destroy()
     await User.where({ id: context.admin.get('id') }).destroy()
-    done()
   })
 
   it('should reject signup when data is incomplete', (done) => {
