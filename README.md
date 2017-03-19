@@ -13,7 +13,7 @@
 - [Mocha](https://github.com/mochajs/mocha/)
 - [JSONDoc](http://jsondoc.org/)
 
-## Gettings started
+## Getting started
 
 Clone the repository:
 ```
