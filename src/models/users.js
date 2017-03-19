@@ -80,7 +80,7 @@ export const User = Bookshelf.Model.extend({
 
   cleanAvi() {
     const user = this
-    const re = /[^\/]*$/
+    const re = /[^\/]*$/ // eslint-disable-line
     const avatarString = user.get('avatar')
     const [Key] = re.exec(avatarString)
     const options = { Bucket, Key }
