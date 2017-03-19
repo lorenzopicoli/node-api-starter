@@ -52,11 +52,10 @@ mkdir src/modules/places
 touch src/modules/places/controller.js
 touch src/modules/places/router.js
 
-# Create the bookshelf model
+# Create the bookshelf model file
 touch src/models/places.js
 
-# Create the database migration
-touch src/models/places.js
+# Create the database migration file
 knex migrate:make create_places_table
 
 # Run the new migration
