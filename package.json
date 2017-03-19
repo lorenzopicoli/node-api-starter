@@ -1,7 +1,7 @@
 {
-  "name": "node-boilerplate",
+  "name": "node-starter",
   "version": "1.0.0",
-  "description": "Boilerplate for a node API",
+  "description": "Node.js API server starter using Koa2 and Bookshelf",
   "main": "index.js",
   "author": "Lorenzo Piccoli Módolo <lorenzopicoli@me.com>",
   "license": "MIT",
@@ -60,17 +60,17 @@
     "codecov": "^1.0.1",
     "del": "^2.2.0",
     "eslint": "^3.15.0",
-    "eslint-config-standard": "^6.0.1",
+    "eslint-config-standard": "^7.1.0",
     "eslint-plugin-babel": "^4.0.1",
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.0",
     "faker": "^4.1.0",
     "isparta": "^4.0.0",
     "istanbul": "^1.0.0-alpha",
-    "knex-seed-file": "^0.1.4",
-    "mocha": "^2.5.3",
-    "mocha-circleci-reporter": "0.0.1",
+    "knex-seed-file": "^0.3.1",
+    "mocha": "^3.2.0",
+    "mocha-circleci-reporter": "0.0.2",
     "nodemon": "^1.9.2",
-    "supertest": "^1.2.0"
+    "supertest": "^3.0.0"
   }
 }
