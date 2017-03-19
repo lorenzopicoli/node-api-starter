@@ -10,7 +10,6 @@ exports.seed = (knex, Promise) => {
         id: uuidV4(),
         name: 'Lorenzo Piccoli',
         email: 'lorenzopicoli@me.com',
-        username: 'lorenzopicoli',
         password: hash,
         role: 'admin'
       }
