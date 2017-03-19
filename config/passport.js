@@ -45,7 +45,6 @@ passport.use('local', new LocalStrategy({
 }))
 
 passport.use('facebook-token', new FacebookTokenStrategy(config.facebook, async (accessToken, refreshToken, profile, done) => {
-  console.log(accessToken, profile.id)
   if (!accessToken || !profile.id) {
     return done('something', null)
   }
