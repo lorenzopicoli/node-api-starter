@@ -23,6 +23,10 @@ Navigate to the repo folder and install the dependencies:
 ```
 npm i
 ```
+Env variables will be loaded from a `.env` file (see Environment section)
+```
+touch .env
+```
 You can make sure the code is working by running the server on development mode:
 ```
 ➜ npm run dev
@@ -59,7 +63,20 @@ knex migrate:make create_places_table
 npm run db:migrate
 ```
 
+## Environment variables
 
+.env example:
+```
+PORT=5000
+DATABASE_URL=postgresql://localhost:5432/<db name>
+AWS_BUCKET=xxxxxxx
+AWS_ACCESS_KEY_ID=XXXXXXXX
+AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxx
+CODECOV_TOKEN=xxxxxxxxxxx
+ADMIN_PASS=xxxxxxxx (admin password for seeding)
+FACEBOOK_ID=xxxxxxxxx
+FACEBOOK_SECRET=xxxxxxx
+```
 ## NPM scripts
 
 ### Start the server on live mode (and migrate the database)
